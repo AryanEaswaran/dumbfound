@@ -49,7 +49,7 @@ function createNoteTable() {
     noteFreq[i] = [];
   }
 
-  //Add notes based on keyboard size. Rescale required. 
+  //Add notes [octave][note] = frequency
   noteFreq[2]["C"] = 65.406391325149658;
   noteFreq[2]["C#"] = 69.295657744218024;
   noteFreq[2]["D"] = 73.416191979351890;
@@ -116,11 +116,6 @@ function createNoteTable() {
 
   return noteFreq;
 }
-if (!Object.entries) {
-    Object.entries = function entries(O) {
-        return reduce(keys(O), (e, k) => concat(e, typeof k === 'string' && isEnumerable(O, k) ? [[k, O[k]]] : []), []);
-    };
-}
 
 //SIGNAL CHAIN 
 function setup() {
@@ -143,7 +138,8 @@ function setup() {
     let keyList = Object.entries(keys);
     let octaveElem = document.createElement("div");
     octaveElem.className = "octave";
-    
+ 
+    //create empty div for each key
     keyList.forEach(function(key) {
       if (key[0].length == 1) {
         octaveElem.appendChild(createKey(key[0], idx, key[1]));
@@ -169,11 +165,13 @@ setup();function createKey(note, octave, freq) {
   let keyElement = document.createElement("div");
   let labelElement = document.createElement("div");
  
+  //Set keyElement dataset values to be changed as new notes are playing. I 
   keyElement.className = "key";
   keyElement.dataset["octave"] = octave;
   keyElement.dataset["note"] = note;
   keyElement.dataset["frequency"] = freq;
  
+  //Label each empty key created above
   labelElement.innerHTML = note + "<sub>" + octave + "</sub>";
   keyElement.appendChild(labelElement);
 
