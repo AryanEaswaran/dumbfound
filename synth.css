@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Dummy'; /*a name to be used later*/
+    src: url('BadMofo.ttf'); /*URL to font*/
+}
+
+body{
+    background-color: black;
+}
+
+#title{
+    color: white;
+    font-family: 'Dummy';
+    font-size: 72;
+     padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+#titleflex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+.container {
+  overflow-x: hidden;
+  overflow-y: hidden;
+ 
+
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.keyboard {
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.key {
+  cursor: default;
+  font: 12px "Helvetica", "Helvetica", "Helvetica", sans-serif;
+  border: 0.1px solid black;
+  border-radius: 50px;
+  width: 30px;
+  height: 150px;
+  text-align: center;
+  box-shadow: 2px 2px purple;
+  display: inline-block;
+  position: relative;
+  margin-right: 3px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+    color: white;
+  background-color: black;
+}
+
+#flex1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#flex2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  align-content: space-between;
+}
+.key div {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.key div sub {
+  font-size: 10px;
+  pointer-events: none;
+}
+
+.key:hover {
+  background-color: lightgoldenrodyellow;
+}
+
+.key:active {
+  background-color: #000;
+  color: #fff;
+}
+
+.octave {
+  display: inline-block;
+  padding: 0 6px 0 0;
+}
+
+.settingsBar {
+  padding-top: 8px;
+  font: 14px "Open Sans", "Lucida Grande", "Arial", sans-serif;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  height: 30px;
+color: deeppink;
+}
+
+.left {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.left span, .left input {
+  vertical-align: middle;
+}
+
+.right {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.right span {
+  vertical-align: middle;
+}
+
+.right input {
+  vertical-align: baseline;
+}
+
+#visualizer{
+    color: antiquewhite;
+}
